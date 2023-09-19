@@ -14,11 +14,14 @@ from io import BytesIO
 class PosPayment(models.Model):
    _inherit = "pos.payment"
     
+   is_crypto_payment = fields.Boolean('Paid with Crypto')
+   cryptopay_payment_type = fields.Char('Crypto payment Type')
    cryptopay_invoice_id = fields.Char('CryptoPay Invoice ID')
    conversion_rate = fields.Float('Conversion rate')
-   invoiced_sat_amount = fields.Float('Invoiced Satoshi Amount', digits=(12,4))
+   invoiced_crypto_amount = fields.Float('Invoiced Crypto Amount', digits=(12,4))
    cryptopay_payment_link = fields.Char('CryptoPay Payment Link')
    cryptopay_payment_link_qr_code = fields.Binary('QR Code', compute="_generate_qr") #binary field that is computed into a QR
+
 
    def _generate_qr(self): #called by compute field to change binary into QR
        for rec in self:

@@ -51,10 +51,12 @@ class PosOrderInherit(models.Model):
         _logger.info("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         payment_fields = super()._get_fields_for_payment_lines()
         return payment_fields + [
+            'is_crypto_payment',
             'cryptopay_invoice_id',
+            'cryptopay_payment_type',
             'cryptopay_payment_link',
             'cryptopay_payment_link_qr_code',
-            'invoiced_sat_amount',
+            'invoiced_crypto_amount',
             'conversion_rate',
             ]
 
@@ -66,9 +68,11 @@ class PosOrderInherit(models.Model):
             [('id', '=', int(ui_paymentline['payment_method_id']))])
         if pay_method != False: # if there is a payment method
             fields.update({
+                'is_crypto_payment': ui_paymentline.get('is_crypto_payment'),
                 'cryptopay_invoice_id': ui_paymentline.get('cryptopay_invoice_id'),
+                'cryptopay_payment_type': ui_paymentline.get('cryptopay_payment_type'),
                 'cryptopay_payment_link': ui_paymentline.get('cryptopay_payment_link'),
-                'invoiced_sat_amount': ui_paymentline.get('invoiced_sat_amount'),
+                'invoiced_crypto_amount': ui_paymentline.get('invoiced_crypto_amount'),
                 'conversion_rate': ui_paymentline.get('conversion_rate'),
             })
         return fields

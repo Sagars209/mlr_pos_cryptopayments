@@ -8,6 +8,9 @@
     'summary': 'Integrate your POS with Crypto on-chain and payments',
     'description': '',
     'depends': ['point_of_sale','account','pos_restaurant'],
+    'data': [
+        "views/pos_payment.xml",
+    ],
     'installable': True,
     'assets': {
         'point_of_sale.assets': [
