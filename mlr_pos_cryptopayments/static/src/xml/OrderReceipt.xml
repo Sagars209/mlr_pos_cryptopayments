@@ -10,13 +10,13 @@
                             <span class="pos-receipt-center-align">
                                 <div>----------------------------</div>
                                 <br/>
-                                <div class="pos-receipt-title">Scan QR to pay in Bitcoin/Lightning</div>
+                                <div class="pos-receipt-title">Scan QR to pay in Bitcoin/Shitcoins</div>
                             </span>
                         <t class="pos-receipt-center-align">
                             <img t-if="line.cryptopay_payment_link_qr_code" id="btrcqrcode"
                                  t-att-src="line.cryptopay_payment_link_qr_code" width="300"/>
                             <div>Conversion rate ($/crypto):<span t-esc="line.conversion_rate" class="pos-receipt-right-align"/></div>
-                            <div>Invoiced Satoshis: <span t-esc="line.invoiced_sat_amount" class="pos-receipt-right-align"/></div>
+                            <div>Invoiced Crypto: <span t-esc="line.invoiced_crypto_amount" class="pos-receipt-right-align"/></div>
                             <div class="pos-receipt-title">Powered by MI Lightning Rod</div>
                             <div class="pos-receipt-title">www.MILightningRod.com</div>
                             <br/>
