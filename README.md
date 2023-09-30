@@ -16,9 +16,11 @@ After step 1 you can install a dependent module to trigger automatic installatio
 4. Search for the module (MLR) and install.
 
 Set-up
+
 There is no additional setup for this module until a provider module is installed.
 
 Operation
+
 There is no additional operations from this module until a provider module is installed.
 
 ![image](https://github.com/ERP-FTW/mlr_pos_cryptopayments/assets/124227412/16315363-ad4a-4ca2-8460-397a2d549b55)
