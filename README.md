@@ -9,7 +9,7 @@ Compatible with Odoo 16
 Postgres 14+
 
 Installation (see this video for tutorial on Odoo module installation)
-\nAfter step 1 you can install a dependent module to trigger automatic installation.
+/nAfter step 1 you can install a dependent module to trigger automatic installation.
 1. Download repository and place extracted folder in the Odoo addons folder.
 2. Login to Odoo database to upgrade and enable developer mode under settings.
 3. Under apps Update the App list.
