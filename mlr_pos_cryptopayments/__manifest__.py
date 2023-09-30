@@ -10,6 +10,7 @@
     'depends': ['point_of_sale','account','pos_restaurant'],
     'data': [
         "views/pos_payment.xml",
+        "views/pos_payment_method.xml",
     ],
     'installable': True,
     'assets': {

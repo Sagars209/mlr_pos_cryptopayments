@@ -18,7 +18,7 @@ class PosPayment(models.Model):
    cryptopay_payment_type = fields.Char('Crypto payment Type')
    cryptopay_invoice_id = fields.Char('CryptoPay Invoice ID')
    conversion_rate = fields.Float('Conversion rate')
-   invoiced_crypto_amount = fields.Float('Invoiced Crypto Amount', digits=(12,4))
+   invoiced_crypto_amount = fields.Float('Invoiced Crypto Amount', digits=(12,8))
    cryptopay_payment_link = fields.Char('CryptoPay Payment Link')
    cryptopay_payment_link_qr_code = fields.Binary('QR Code', compute="_generate_qr") #binary field that is computed into a QR
 

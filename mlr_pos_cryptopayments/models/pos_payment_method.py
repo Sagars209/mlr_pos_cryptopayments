@@ -24,6 +24,9 @@ class PosPaymentMethod(models.Model):
     # crypto payment 
     server_url = fields.Char(string='Server URL')
     api_key = fields.Char(string='API Key') #use account API key not store API key
+    crypto_minimum_amount = fields.Float("Order minimum fiat amount for crypto payment")
+    crypto_maximum_amount = fields.Float("Order maximum fiat amount for crypto payment")
+
 
     def _test_connection(self):
         return {'status_code': 200}
