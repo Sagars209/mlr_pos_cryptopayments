@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
-# Copyright (C) 2004-2008 PC Solutions (<http://pcsol.be>). All Rights Reserved
 from odoo import fields, models, api
 from odoo.exceptions import ValidationError
 import requests
