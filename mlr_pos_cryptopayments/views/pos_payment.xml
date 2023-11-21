@@ -8,12 +8,12 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='session_id']" position="after">
                     <field name="is_crypto_payment"/>
-                    <field name="cryptopay_payment_type" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}"/>
-                    <field name="cryptopay_invoice_id" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}" style="width: 200px"/>
-                    <field name="conversion_rate" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}"/>
-                    <field name="invoiced_crypto_amount" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}"/>
-                    <field name="cryptopay_payment_link" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}" style="width: 200px"/>
-                    <field name="currency_id" attrs="{'invisible': [('is_crypto_payment', '!=', True)]}"/>
+                    <field name="cryptopay_payment_type"/>
+                    <field name="cryptopay_invoice_id"/>
+                    <field name="conversion_rate"/>
+                    <field name="invoiced_crypto_amount"/>
+                    <field name="cryptopay_payment_link"/>
+                    <field name="currency_id"/>
                 </xpath>
             </field>
         </record>
