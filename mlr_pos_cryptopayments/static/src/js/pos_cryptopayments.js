@@ -7,6 +7,8 @@ patch(Payment.prototype, {
     export_for_printing() {
         let data = super.export_for_printing();
         data.cryptopay_payment_link_qr_code = this.cryptopay_payment_link_qr_code;
+        data.conversion_rate = this.conversion_rate;
+        data.invoiced_crypto_amount = this.invoiced_crypto_amount;
         return data;   
     }
 });
