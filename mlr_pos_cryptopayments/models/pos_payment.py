@@ -22,6 +22,17 @@ class PosPayment(models.Model):
    cryptopay_payment_link = fields.Char('CryptoPay Payment Link')
    cryptopay_payment_link_qr_code = fields.Binary('QR Code', compute="_generate_qr") #binary field that is computed into a QR
 
+   def _export_for_ui(self,payment):
+      payment_fields = super(PosPayment, self)._export_for_ui(payment)
+      payment_fields.update({
+         'is_crypto_payment': payment.cryptopay_payment_type,
+         'cryptopay_invoice_id': payment.cryptopay_invoice_id,
+         'cryptopay_payment_type': payment.cryptopay_payment_type,
+         'cryptopay_payment_link': payment.cryptopay_payment_link,
+         'invoiced_crypto_amount': payment.invoiced_crypto_amount,
+         'conversion_rate': payment.conversion_rate,
+         })
+      return payment_fields
 
    def _generate_qr(self): #called by compute field to change binary into QR
        for rec in self:
