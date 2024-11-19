@@ -1,8 +1,8 @@
 /** @odoo-module */
 import { patch } from "@web/core/utils/patch";
-import { Payment } from "@point_of_sale/app/store/models";
+import { PosStore } from "@point_of_sale/app/store/pos_store";
 
-patch(Payment.prototype, {
+patch(PosStore.prototype, {
     //exports as JSON for receipt printing
     export_for_printing() {
         let data = super.export_for_printing();
