@@ -7,7 +7,7 @@
                 <div class="electronic_status">
                     <t t-esc='line.crypto_payment_status'/>
                 </div>
-                <div class="button show_receipt highlight" title="Show receipt" t-on-click="() => this.pos.clickPrintBill()">
+                <div class="button show_receipt highlight" title="Show receipt" t-on-click="() => this.pos.clickShowReceipt()">
                     Show receipt
                 </div>
            	</t> 

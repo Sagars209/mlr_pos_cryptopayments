@@ -1,7 +1,8 @@
 /** @odoo-module */
 import { patch } from "@web/core/utils/patch";
-//import { PosStore } from "@point_of_sale/app/store/pos_store";
+import { PosStore } from "@point_of_sale/app/store/pos_store";
 import { PosPayment } from "@point_of_sale/app/models/pos_payment";
+import { BillScreen } from "@pos_restaurant/app/bill_screen/bill_screen";
 
 patch(PosPayment.prototype, {
     //exports as JSON for receipt printing
@@ -37,4 +38,10 @@ patch(PosPayment.prototype, {
             return false;
         }
     },
+});
+
+patch(PosStore.prototype, {
+    async clickShowReceipt() {
+        this.dialog.add(BillScreen);
+    }
 });
